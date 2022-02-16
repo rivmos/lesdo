@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LesDo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="headerBlock">
+        <div class="innerHeader logo">
+            <ul class="menuLeft">
+                <li><b>LesDo</b></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </div>
+        <div class="innerHeader navBar">
+            <ul class="menuRight">
+                <li><input id="searchInput" type="text" placeholder="Enter"></li>
+                <li id="clearInput">x</li>
+                <li><button id="searchBtn" type="button" value="Submit">Search</button></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container">
+
+        <div id="bannerBlock">
+            <h2 id="heading">Welcome To LesDo</h2>
+            <div class="addNotes">
+                <p>Your Note :</p>
+                <textarea id="textToAdd" rows="5" cols="32"></textarea>
+                <br>
+                <button id="addBtn" type="button" value="Submit">Add Note</button>
+            </div>
+            <div class="showNotes">
+                <h2 id="conclusion">Your Notes :</h2>
+                <div class="allNotes">
+                    <!--All Notes Appear Here-->
+                </div>    
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="footerBlock">
+        <span>&copy;2022</span>
+    </div>
+    
+</body>
+<script src="js/script.js"></script>
+</html>
