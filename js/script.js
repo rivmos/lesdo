@@ -20,9 +20,15 @@ function addNotes() {
     // }
 
     let textToAdd = document.getElementById('textToAdd');
-    notesObj.push(textToAdd.value);
+    let noteTitle = document.getElementById('noteTitle');
+    let myObj = {
+        title : noteTitle.value,
+        note : textToAdd.value,
+    };
+    notesObj.push(myObj);
     localStorage.setItem('notes', JSON.stringify(notesObj));
     textToAdd.value = "";
+    noteTitle.value = "";
     showNotes();
 }
 
@@ -39,8 +45,8 @@ function showNotes() {
     notesObj.forEach(function (element, index) {
         html += `
                 <div class="note">
-                    <h4>Note ${index + 1}</h4>
-                    <p>${element}</p>
+                    <h4>${element.title}</h4>
+                    <p>${element.note}</p>
                     <button id="${index + 1}" onclick="delNotes(this.id)" class="delBtn">Delete Note</button>
                 </div>`;
     })
@@ -80,8 +86,10 @@ function searchNotes(){
     let notes = document.getElementsByClassName('note');
     Array.from(notes).forEach(function(element){
         let note = element.querySelector('p');
+        let title = element.querySelector('h4');
         note = note.innerText;
-        if(note.toLowerCase().includes(searchText)){
+        title = title.innerText;
+        if(note.toLowerCase().includes(searchText) || title.toLowerCase().includes(searchText)){
             element.style.display = 'block';
         }
         else{
